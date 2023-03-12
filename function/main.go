@@ -1,20 +1,18 @@
 package function
 
 import (
-	"context"
 	"log"
+	"net/http"
 
 	"github.com/GoogleCloudPlatform/functions-framework-go/functions"
-	cloudevents "github.com/cloudevents/sdk-go/v2"
 )
 
 func init() {
-	functions.CloudEvent("CloudEventFunc", cloudEventFunc)
+	functions.HTTP("HelloWorld", helloWorld)
 }
 
-func cloudEventFunc(ctx context.Context, e cloudevents.Event) error {
+func helloWorld(w http.ResponseWriter, r *http.Request) {
 	log.Print("begin")
+	w.Write([]byte("Hello, World!"))
 	log.Print("end")
-	// Do something with event.Context and event.Data (via event.DataAs(foo)).
-	return nil
 }

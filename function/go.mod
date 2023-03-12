@@ -2,12 +2,10 @@ module github.com/hsmtkk/symmetrical-spork/function
 
 go 1.20
 
-require (
-	github.com/GoogleCloudPlatform/functions-framework-go v1.6.1
-	github.com/cloudevents/sdk-go/v2 v2.13.0
-)
+require github.com/GoogleCloudPlatform/functions-framework-go v1.6.1
 
 require (
+	github.com/cloudevents/sdk-go/v2 v2.13.0 // indirect
 	github.com/google/uuid v1.1.2 // indirect
 	github.com/json-iterator/go v1.1.10 // indirect
 	github.com/modern-go/concurrent v0.0.0-20180228061459-e0a39a4cb421 // indirect
